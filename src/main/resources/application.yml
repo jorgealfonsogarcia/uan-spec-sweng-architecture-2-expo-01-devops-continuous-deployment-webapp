@@ -16,6 +16,10 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+server:
+  servlet:
+    context-path: /expo-02-devops-cd
+
 spring:
   datasource:
     driverClassName: org.h2.Driver
@@ -24,8 +28,3 @@ spring:
     username: uan
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-
-
-server:
-  servlet:
-    context-path: /expo-02-devops-cd
