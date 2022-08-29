@@ -24,3 +24,8 @@ spring:
     username: uan
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+
+
+server:
+  servlet:
+    context-path: /expo-02-devops-cd
