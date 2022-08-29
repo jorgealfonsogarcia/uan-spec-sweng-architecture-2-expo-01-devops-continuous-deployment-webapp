@@ -16,28 +16,14 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package co.edu.uan.sweng.architecture.devops.cd.model.service;
+package co.edu.uan.sweng.architecture.devops.cd.model.dto;
 
-import co.edu.uan.sweng.architecture.devops.cd.model.dto.randomusers.RandomUser;
 import co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality;
-import co.edu.uan.sweng.architecture.devops.cd.persistence.rest.RandomUsersRestClient;
-import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import lombok.Data;
 
-@Service
-@Slf4j
-class RandomUsersService {
+@Data
+public class CustomerRequestDTO {
 
-    private final RandomUsersRestClient randomUsersRestClient;
-
-    RandomUsersService(@Autowired RandomUsersRestClient randomUsersRestClient) {
-        this.randomUsersRestClient = randomUsersRestClient;
-    }
-
-    @SneakyThrows
-    RandomUser getUsers(final Integer results, final Nationality nationality) {
-        return randomUsersRestClient.getUsers(results, nationality.name()).execute().body();
-    }
+    private Integer numOfCustomers;
+    private Nationality nationality;
 }

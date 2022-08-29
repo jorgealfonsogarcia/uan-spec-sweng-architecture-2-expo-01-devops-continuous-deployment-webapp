@@ -16,28 +16,26 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package co.edu.uan.sweng.architecture.devops.cd.model.service;
+package co.edu.uan.sweng.architecture.devops.cd.config;
 
-import co.edu.uan.sweng.architecture.devops.cd.model.dto.randomusers.RandomUser;
-import co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality;
 import co.edu.uan.sweng.architecture.devops.cd.persistence.rest.RandomUsersRestClient;
-import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-@Service
-@Slf4j
-class RandomUsersService {
+@Configuration
+public class RetrofitConfiguration {
+    private final String randomusersRestServiceUrl;
 
-    private final RandomUsersRestClient randomUsersRestClient;
-
-    RandomUsersService(@Autowired RandomUsersRestClient randomUsersRestClient) {
-        this.randomUsersRestClient = randomUsersRestClient;
+    public RetrofitConfiguration(@Value("${randomusers.rest.service.url}") String randomusersRestServiceUrl) {
+        this.randomusersRestServiceUrl = randomusersRestServiceUrl;
     }
 
-    @SneakyThrows
-    RandomUser getUsers(final Integer results, final Nationality nationality) {
-        return randomUsersRestClient.getUsers(results, nationality.name()).execute().body();
+    @Bean
+    public RandomUsersRestClient randomUsersRestClient() {
+        return new Retrofit.Builder().baseUrl(randomusersRestServiceUrl)
+                .addConverterFactory(GsonConverterFactory.create()).build().create(RandomUsersRestClient.class);
     }
 }

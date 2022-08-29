@@ -17,12 +17,74 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+              crossorigin="anonymous">
         <title>Title</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="container">
+            <div>
+                <h1>Customers</h1>
+            </div>
+            <div>
+                <form th:action="@{/}" method="post">
+                    <div>
+                        <select id="numOfCustomers" name="numOfCustomers" class="form-select"
+                                aria-label="Default select example">
+                            <option th:each="i : ${#numbers.sequence(1, 10)}" th:value="${i}" th:text="${i}"></option>
+                        </select>
+                    </div>
+                    <div>
+                        <select id="nationality" name="nationality" class="form-select"
+                                aria-label="Default select example">
+                            <option th:each="nationality : ${nationalities}" th:value="${nationality.name()}"
+                                    th:text="${nationality.name()}"></option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">FIRST</th>
+                            <th scope="col">LAST</th>
+                            <th scope="col">ADDRESS</th>
+                            <th scope="col">CELLPHONE</th>
+                            <th scope="col">CITY</th>
+                            <th scope="col">STATE</th>
+                            <th scope="col">COUNTRY</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="customer: ${customers}">
+                            <th th:text="${customer.id}" scope="row"></th>
+                            <td th:text="${customer.email}"></td>
+                            <td th:text="${customer.firstName}"></td>
+                            <td th:text="${customer.lastName}"></td>
+                            <td th:text="${customer.address}"></td>
+                            <td th:text="${customer.cellphoneNumber}"></td>
+                            <td th:text="${customer.city}"></td>
+                            <td th:text="${customer.state}"></td>
+                            <td th:text="${customer.country}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+                crossorigin="anonymous"></script>
     </body>
 </html>

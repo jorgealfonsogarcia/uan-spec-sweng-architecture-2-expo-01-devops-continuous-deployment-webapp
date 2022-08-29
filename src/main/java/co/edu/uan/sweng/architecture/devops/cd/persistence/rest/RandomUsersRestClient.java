@@ -19,15 +19,17 @@
 package co.edu.uan.sweng.architecture.devops.cd.persistence.rest;
 
 import co.edu.uan.sweng.architecture.devops.cd.model.dto.randomusers.RandomUser;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 
-@FeignClient(path = "${randomusers.rest.service.url}")
 public interface RandomUsersRestClient {
 
-    @GetMapping
-    RandomUser getUsers(@RequestParam("results") Integer results, @RequestParam("nat") String nationality,
-                        @RequestParam(value = "inc", required = false, defaultValue = "name,location,email,cell")
-                        String includedFields);
+    @GET("api")
+    Call<RandomUser> getUsers(@Query("results") Integer results, @Query("nat") String nationality,
+                              @Query(value = "inc") String includedFields);
+
+    default Call<RandomUser> getUsers(final Integer results, final String nationality) {
+        return getUsers(results, nationality, "name,location,email,cell");
+    }
 }

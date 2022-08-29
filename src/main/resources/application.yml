@@ -32,4 +32,4 @@ spring:
 randomusers:
   rest:
     service:
-      url: https://randomuser.me/api/
+      url: https://randomuser.me/

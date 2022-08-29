@@ -60,8 +60,9 @@ public class CustomerService {
         customerRepository.deleteById(id);
     }
 
-    public List<Customer> generateAndSave(final Integer results, final Nationality nationality) {
-        return randomUsersService.getUsers(results, nationality).getResults().stream().map(this::map).toList();
+    public List<Customer> generateAndSave(final Integer numOfCustomers, final Nationality nationality) {
+        return randomUsersService.getUsers(numOfCustomers, nationality).getResults()
+                .stream().map(this::map).map(this::save).toList();
     }
 
     private Customer map(final Result result) {

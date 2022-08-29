@@ -18,15 +18,61 @@
 
 package co.edu.uan.sweng.architecture.devops.cd.controller.ui;
 
+import co.edu.uan.sweng.architecture.devops.cd.model.dto.CustomerRequestDTO;
+import co.edu.uan.sweng.architecture.devops.cd.model.entity.Customer;
+import co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality;
+import co.edu.uan.sweng.architecture.devops.cd.model.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Arrays;
+
+import static java.util.Comparator.comparing;
+import static java.util.Objects.requireNonNullElse;
+import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ONE;
 
 @Controller
 @RequestMapping("/")
 public class IndexController {
 
-    @RequestMapping
-    public String index() {
-        return "index";
+    public static final String INDEX = "index";
+    private final CustomerService customerService;
+
+    @Autowired
+    public IndexController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
+    @GetMapping
+    public String index(Model model) {
+        fillDefault(model);
+        return INDEX;
+    }
+
+    @PostMapping
+    public String processForm(@ModelAttribute CustomerRequestDTO customer, Model model) {
+        final var numOfCustomers = requireNonNullElse(customer.getNumOfCustomers(), INTEGER_ONE);
+        final var nationality = requireNonNullElse(customer.getNationality(), Nationality.US);
+
+        final var newCustomers = customerService.generateAndSave(numOfCustomers, nationality);
+
+        final var customers = customerService.findAll();
+        customers.sort(comparing(Customer::getId));
+
+        model.addAttribute("newCustomers", newCustomers);
+        model.addAttribute("customers", customers);
+
+        fillDefault(model);
+
+        return INDEX;
+    }
+
+    private void fillDefault(final Model model) {
+        model.addAttribute("nationalities", Arrays.stream(Nationality.values()).sorted().toList());
     }
 }
