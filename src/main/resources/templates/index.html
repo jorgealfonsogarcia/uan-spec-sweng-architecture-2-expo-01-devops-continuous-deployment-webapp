@@ -33,21 +33,28 @@
             </div>
             <div>
                 <form th:action="@{/}" method="post">
-                    <div>
-                        <select id="numOfCustomers" name="numOfCustomers" class="form-select"
-                                aria-label="Default select example">
-                            <option th:each="i : ${#numbers.sequence(1, 10)}" th:value="${i}" th:text="${i}"></option>
-                        </select>
+                    <div class="row">
+                        <div class="col">
+                            <label for="numOfCustomers" class="form-label">Num. of Customers</label>
+                            <select id="numOfCustomers" name="numOfCustomers" class="form-select"
+                                    aria-label="Default select example">
+                                <option th:each="i : ${#numbers.sequence(1, 10)}" th:value="${i}"
+                                        th:text="${i}"></option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="nationality" class="form-label">Nationality</label>
+                            <select id="nationality" name="nationality" class="form-select"
+                                    aria-label="Default select example">
+                                <option th:each="nationality : ${nationalities}" th:value="${nationality.name()}"
+                                        th:text="${nationality.name()}"></option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <select id="nationality" name="nationality" class="form-select"
-                                aria-label="Default select example">
-                            <option th:each="nationality : ${nationalities}" th:value="${nationality.name()}"
-                                    th:text="${nationality.name()}"></option>
-                        </select>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
                 </form>
             </div>
