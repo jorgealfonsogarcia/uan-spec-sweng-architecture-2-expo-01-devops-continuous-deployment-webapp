@@ -18,7 +18,10 @@
 
 package co.edu.uan.sweng.architecture.devops.cd.model.service;
 
+import co.edu.uan.sweng.architecture.devops.cd.model.dto.randomusers.Result;
 import co.edu.uan.sweng.architecture.devops.cd.model.entity.Customer;
+import co.edu.uan.sweng.architecture.devops.cd.model.entity.CustomerBuilder;
+import co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality;
 import co.edu.uan.sweng.architecture.devops.cd.persistence.repository.CustomerRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +34,14 @@ import java.util.Optional;
 @Slf4j
 public class CustomerService {
 
+    private static final String ADDRESS_FORMAT = "%d %s";
     private final CustomerRepository customerRepository;
+    private final RandomUsersService randomUsersService;
 
     @Autowired
-    public CustomerService(CustomerRepository customerRepository) {
+    public CustomerService(CustomerRepository customerRepository, RandomUsersService randomUsersService) {
         this.customerRepository = customerRepository;
+        this.randomUsersService = randomUsersService;
     }
 
     public List<Customer> findAll() {
@@ -52,5 +58,25 @@ public class CustomerService {
 
     public void deleteById(Long id) {
         customerRepository.deleteById(id);
+    }
+
+    public List<Customer> generateAndSave(final Integer results, final Nationality nationality) {
+        return randomUsersService.getUsers(results, nationality).getResults().stream().map(this::map).toList();
+    }
+
+    private Customer map(final Result result) {
+        final var location = result.getLocation();
+        final var street = location.getStreet();
+        final var name = result.getName();
+
+        return new CustomerBuilder()
+                .setEmail(result.getEmail())
+                .setFirstName(name.getFirst())
+                .setLastName(name.getLast())
+                .setAddress(ADDRESS_FORMAT.formatted(street.getNumber(), street.getName()))
+                .setCity(location.getCity())
+                .setState(location.getState())
+                .setCountry(location.getCountry())
+                .createCustomer();
     }
 }

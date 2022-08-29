@@ -47,6 +47,21 @@ public class Customer implements Serializable {
     private String state;
     private String country;
 
+    public Customer() {
+    }
+
+    Customer(String email, String firstName, String lastName, String address, String cellphoneNumber, String city,
+             String state, String country) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.cellphoneNumber = cellphoneNumber;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+    }
+
     public Long getId() {
         return id;
     }

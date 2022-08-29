@@ -19,9 +19,11 @@
 
 package co.edu.uan.sweng.architecture.devops.cd.model.dto.randomusers;
 
+import lombok.Data;
+
 import javax.annotation.Generated;
 
-
+@Data
 @Generated("jsonschema2pojo")
 public class Name {
 

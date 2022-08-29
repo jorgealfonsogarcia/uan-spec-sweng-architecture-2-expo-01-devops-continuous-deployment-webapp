@@ -28,17 +28,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
 @Slf4j
-public class RandomUsersService {
+class RandomUsersService {
 
     private final RandomUsersRestClient randomUsersRestClient;
 
     @Autowired
-    public RandomUsersService(RandomUsersRestClient randomUsersRestClient) {
+    RandomUsersService(RandomUsersRestClient randomUsersRestClient) {
         this.randomUsersRestClient = randomUsersRestClient;
     }
 
     @GetMapping
-    public RandomUser getUsers(final Integer results, final Nationality nationality) {
+    RandomUser getUsers(final Integer results, final Nationality nationality) {
         return randomUsersRestClient.getUsers(results, nationality.name(), null);
     }
 }
