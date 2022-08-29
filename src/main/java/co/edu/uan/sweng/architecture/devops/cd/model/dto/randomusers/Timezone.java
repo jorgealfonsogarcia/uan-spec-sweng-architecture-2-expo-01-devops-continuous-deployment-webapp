@@ -27,6 +27,6 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Timezone {
 
-    public String offset;
-    public String description;
+    private String offset;
+    private String description;
 }

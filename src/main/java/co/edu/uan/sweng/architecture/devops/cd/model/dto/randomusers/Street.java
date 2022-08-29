@@ -27,6 +27,6 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Street {
 
-    public Integer number;
-    public String name;
+    private Integer number;
+    private String name;
 }

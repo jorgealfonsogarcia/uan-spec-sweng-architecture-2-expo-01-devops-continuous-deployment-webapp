@@ -27,6 +27,6 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Coordinates {
 
-    public String latitude;
-    public String longitude;
+    private String latitude;
+    private String longitude;
 }

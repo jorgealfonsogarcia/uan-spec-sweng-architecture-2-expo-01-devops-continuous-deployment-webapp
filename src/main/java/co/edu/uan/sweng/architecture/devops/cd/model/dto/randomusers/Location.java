@@ -27,11 +27,11 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Location {
 
-    public Street street;
-    public String city;
-    public String state;
-    public String country;
-    public String postcode;
-    public Coordinates coordinates;
-    public Timezone timezone;
+    private Street street;
+    private String city;
+    private String state;
+    private String country;
+    private String postcode;
+    private Coordinates coordinates;
+    private Timezone timezone;
 }

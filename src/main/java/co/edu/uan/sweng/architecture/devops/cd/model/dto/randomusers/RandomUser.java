@@ -28,6 +28,6 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class RandomUser {
 
-    public List<Result> results;
-    public Info info;
+    private List<Result> results;
+    private Info info;
 }

@@ -27,11 +27,11 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Login {
 
-    public String uuid;
-    public String username;
-    public String password;
-    public String salt;
-    public String md5;
-    public String sha1;
-    public String sha256;
+    private String uuid;
+    private String username;
+    private String password;
+    private String salt;
+    private String md5;
+    private String sha1;
+    private String sha256;
 }

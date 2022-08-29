@@ -27,6 +27,6 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Registered {
 
-    public String date;
-    public Integer age;
+    private String date;
+    private Integer age;
 }

@@ -40,7 +40,7 @@ import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ONE;
 @RequestMapping("/")
 public class IndexController {
 
-    public static final String INDEX = "index";
+    public static final String INDEX_VIEW = "index";
     private final CustomerService customerService;
 
     @Autowired
@@ -51,7 +51,7 @@ public class IndexController {
     @GetMapping
     public String index(Model model) {
         fillDefault(model);
-        return INDEX;
+        return INDEX_VIEW;
     }
 
     @PostMapping
@@ -69,7 +69,7 @@ public class IndexController {
 
         fillDefault(model);
 
-        return INDEX;
+        return INDEX_VIEW;
     }
 
     private void fillDefault(final Model model) {

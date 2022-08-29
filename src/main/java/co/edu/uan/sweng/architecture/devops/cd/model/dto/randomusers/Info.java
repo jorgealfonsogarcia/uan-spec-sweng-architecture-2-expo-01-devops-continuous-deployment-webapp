@@ -27,8 +27,8 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Info {
 
-    public String seed;
-    public Integer results;
-    public Integer page;
-    public String version;
+    private String seed;
+    private Integer results;
+    private Integer page;
+    private String version;
 }

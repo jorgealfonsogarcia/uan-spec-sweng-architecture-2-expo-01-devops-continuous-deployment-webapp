@@ -27,7 +27,7 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 public class Name {
 
-    public String title;
-    public String first;
-    public String last;
+    private String title;
+    private String first;
+    private String last;
 }
