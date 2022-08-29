@@ -16,18 +16,28 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package co.edu.uan.sweng.architecture.devops.cd;
+package co.edu.uan.sweng.architecture.devops.cd.model.enums;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
-
-@SpringBootApplication
-@EnableFeignClients
-public class Application {
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
+public enum Nationality {
+    AU,
+    BR,
+    CA,
+    CH,
+    DE,
+    DK,
+    ES,
+    FI,
+    FR,
+    GB,
+    IE,
+    IN,
+    IR,
+    MX,
+    NL,
+    NO,
+    NZ,
+    RS,
+    TR,
+    UA,
+    US
 }

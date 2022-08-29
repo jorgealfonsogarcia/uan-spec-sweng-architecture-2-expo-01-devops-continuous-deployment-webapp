@@ -16,18 +16,18 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package co.edu.uan.sweng.architecture.devops.cd;
+package co.edu.uan.sweng.architecture.devops.cd.persistence.rest;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import co.edu.uan.sweng.architecture.devops.cd.model.dto.randomusers.RandomUser;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@SpringBootApplication
-@EnableFeignClients
-public class Application {
+@FeignClient(path = "${randomusers.rest.service.url}")
+public interface RandomUsersRestClient {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
+    @GetMapping
+    RandomUser getUsers(@RequestParam("results") Integer results, @RequestParam("nat") String nationality,
+                        @RequestParam(value = "inc", required = false, defaultValue = "name,location,email,cell")
+                        String includedFields);
 }

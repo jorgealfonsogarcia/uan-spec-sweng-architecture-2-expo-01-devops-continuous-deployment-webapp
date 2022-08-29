@@ -1,3 +1,4 @@
+
 /*
  *     uan-spec-sweng-architecture-2-expo-01-devops-continuous-deployment-webapp
  *     Copyright (C) 2022  Garcia, J; Poveda, D; UAN
@@ -16,18 +17,26 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package co.edu.uan.sweng.architecture.devops.cd;
+package co.edu.uan.sweng.architecture.devops.cd.model.dto.randomusers;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import lombok.Data;
 
-@SpringBootApplication
-@EnableFeignClients
-public class Application {
+import javax.annotation.Generated;
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+@Data
+@Generated("jsonschema2pojo")
+public class Result {
 
+    public String gender;
+    public Name name;
+    public Location location;
+    public String email;
+    public Login login;
+    public Dob dob;
+    public Registered registered;
+    public String phone;
+    public String cell;
+    public Id id;
+    public Picture picture;
+    public String nat;
 }
