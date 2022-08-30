@@ -24,6 +24,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+/**
+ * Unit test for {@link RetrofitConfiguration}.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @SpringBootTest
 class RetrofitConfigurationTest {
 

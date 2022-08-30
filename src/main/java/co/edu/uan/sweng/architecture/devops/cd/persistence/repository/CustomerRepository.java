@@ -22,6 +22,14 @@ import co.edu.uan.sweng.architecture.devops.cd.model.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * JPA repository for {@link Customer}.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 }

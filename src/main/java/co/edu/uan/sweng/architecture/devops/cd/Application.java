@@ -21,9 +21,22 @@ package co.edu.uan.sweng.architecture.devops.cd;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Application.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @SpringBootApplication
 public class Application {
 
+    /**
+     * Main method.
+     *
+     * @param args the system arguments.
+     */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

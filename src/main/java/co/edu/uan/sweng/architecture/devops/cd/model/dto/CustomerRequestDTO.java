@@ -18,11 +18,20 @@
 
 package co.edu.uan.sweng.architecture.devops.cd.model.dto;
 
+import co.edu.uan.sweng.architecture.devops.cd.model.entity.Customer;
 import co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * DTO for the request to generate and save a new set of {@link Customer}.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

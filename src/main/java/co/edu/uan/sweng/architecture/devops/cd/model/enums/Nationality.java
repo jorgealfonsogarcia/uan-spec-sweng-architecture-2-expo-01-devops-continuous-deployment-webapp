@@ -18,26 +18,98 @@
 
 package co.edu.uan.sweng.architecture.devops.cd.model.enums;
 
+/**
+ * RandomUsers' nationalities.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 public enum Nationality {
+
+    /**
+     * Australia.
+     */
     AU,
+    /**
+     * Brazil.
+     */
     BR,
+    /**
+     * Canada.
+     */
     CA,
+    /**
+     * Switzerland.
+     */
     CH,
+    /**
+     * Germany.
+     */
     DE,
+    /**
+     * Denmark.
+     */
     DK,
+    /**
+     * Spain.
+     */
     ES,
+    /**
+     * Finland.
+     */
     FI,
+    /**
+     * France.
+     */
     FR,
+    /**
+     * United Kingdom.
+     */
     GB,
+    /**
+     * Ireland.
+     */
     IE,
+    /**
+     * India.
+     */
     IN,
+    /**
+     * Iran.
+     */
     IR,
+    /**
+     * Mexico.
+     */
     MX,
+    /**
+     * Netherlands.
+     */
     NL,
+    /**
+     * Norway.
+     */
     NO,
+    /**
+     * New Zealand.
+     */
     NZ,
+    /**
+     * Serbia.
+     */
     RS,
+    /**
+     * Turkey.
+     */
     TR,
+    /**
+     * Ukraine.
+     */
     UA,
+    /**
+     * United States.
+     */
     US
 }

@@ -18,7 +18,16 @@
 
 package co.edu.uan.sweng.architecture.devops.cd.model.entity;
 
+/**
+ * Builder for {@link Customer}.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 public class CustomerBuilder {
+
     private String email;
     private String firstName;
     private String lastName;
@@ -28,47 +37,109 @@ public class CustomerBuilder {
     private String state;
     private String country;
 
+    /**
+     * Sets the email.
+     *
+     * @param email the email.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setEmail(String email) {
         this.email = email;
         return this;
     }
 
+    /**
+     * Sets the first name.
+     *
+     * @param firstName the first name.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
+    /**
+     * Sets the last name.
+     *
+     * @param lastName the last name.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
+    /**
+     * Sets the address.
+     *
+     * @param address the address.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setAddress(String address) {
         this.address = address;
         return this;
     }
 
+    /**
+     * Sets the cell phone number.
+     *
+     * @param cellphoneNumber the cell phone number.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setCellphoneNumber(String cellphoneNumber) {
         this.cellphoneNumber = cellphoneNumber;
         return this;
     }
 
+    /**
+     * Sets the city.
+     *
+     * @param city the city.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setCity(String city) {
         this.city = city;
         return this;
     }
 
+    /**
+     * Sets the state.
+     *
+     * @param state the state.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setState(String state) {
         this.state = state;
         return this;
     }
 
+    /**
+     * Sets the country.
+     *
+     * @param country the country.
+     * @return the instance of the builder.
+     */
     public CustomerBuilder setCountry(String country) {
         this.country = country;
         return this;
     }
 
+    /**
+     * Builds the new {@link Customer} instance.
+     *
+     * @return the new {@link Customer} instance.
+     */
     public Customer createCustomer() {
-        return new Customer(email, firstName, lastName, address, cellphoneNumber, city, state, country);
+        final var customer = new Customer();
+        customer.setEmail(email);
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAddress(address);
+        customer.setCellphoneNumber(cellphoneNumber);
+        customer.setCity(city);
+        customer.setState(state);
+        customer.setCountry(country);
+        return customer;
     }
 }

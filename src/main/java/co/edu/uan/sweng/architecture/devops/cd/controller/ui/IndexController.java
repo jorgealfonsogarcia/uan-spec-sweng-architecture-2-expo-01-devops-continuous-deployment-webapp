@@ -36,6 +36,14 @@ import static java.util.Comparator.comparing;
 import static java.util.Objects.requireNonNullElse;
 import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ONE;
 
+/**
+ * UI controller for the index.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Controller
 @RequestMapping("/")
 public class IndexController {
@@ -43,17 +51,35 @@ public class IndexController {
     public static final String INDEX_VIEW = "index";
     private final CustomerService customerService;
 
+    /**
+     * Constructor.
+     *
+     * @param customerService the service for {@link Customer}.
+     */
     @Autowired
     public IndexController(CustomerService customerService) {
         this.customerService = customerService;
     }
 
+    /**
+     * Fills the UI model with the default content for the index page.
+     *
+     * @param model the UI model.
+     * @return the UI view name.
+     */
     @GetMapping
     public String index(Model model) {
         fillDefault(model);
         return INDEX_VIEW;
     }
 
+    /**
+     * Process the POST request for the index page, and fills the UI model with the results.
+     *
+     * @param customer the DTO request to generate and add a set of new {@link Customer}.
+     * @param model    the UI model.
+     * @return the UI view name.
+     */
     @PostMapping
     public String processForm(@ModelAttribute CustomerRequestDTO customer, Model model) {
         final var numOfCustomers = requireNonNullElse(customer.getNumOfCustomers(), INTEGER_ONE);

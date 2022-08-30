@@ -25,12 +25,29 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Utility to read the JSON test resources files.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 public final class JsonResourcesReader {
 
-    public static <T> T read(final String filepath, final Class<T> tClass) throws IOException {
+    /**
+     * Reads the JSON file and converts its content to an instance of the indicated class.
+     *
+     * @param filepath  the JSON filepath.
+     * @param typeClass the class of the content.
+     * @param <T>       the class of the content.
+     * @return an instance of the JSON file content from the indicated class.
+     * @throws IOException If an I/O error occurs.
+     */
+    public static <T> T read(final String filepath, final Class<T> typeClass) throws IOException {
         try (final var reader = new BufferedReader(new InputStreamReader(new ClassPathResource(filepath)
                 .getInputStream()))) {
-            return new Gson().fromJson(reader, tClass);
+            return new Gson().fromJson(reader, typeClass);
         }
     }
 

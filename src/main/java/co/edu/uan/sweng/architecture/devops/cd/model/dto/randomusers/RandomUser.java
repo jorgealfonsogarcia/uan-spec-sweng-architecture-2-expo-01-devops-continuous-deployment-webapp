@@ -24,6 +24,14 @@ import lombok.Data;
 import java.util.List;
 import javax.annotation.Generated;
 
+/**
+ * RandomUsers' POJO. It contains the information of all the users generated through the REST API.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Data
 @Generated("jsonschema2pojo")
 public class RandomUser {

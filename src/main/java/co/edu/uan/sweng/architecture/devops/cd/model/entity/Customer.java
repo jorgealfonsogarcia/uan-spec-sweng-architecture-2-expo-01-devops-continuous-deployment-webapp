@@ -29,6 +29,14 @@ import java.io.Serializable;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+/**
+ * Customer.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Entity
 public class Customer implements Serializable {
 
@@ -47,89 +55,164 @@ public class Customer implements Serializable {
     private String state;
     private String country;
 
-    public Customer() {
-    }
-
-    Customer(String email, String firstName, String lastName, String address, String cellphoneNumber, String city,
-             String state, String country) {
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.cellphoneNumber = cellphoneNumber;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-    }
-
+    /**
+     * Gets the id.
+     *
+     * @return the id.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Sets the id.
+     *
+     * @param id the id.
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * Gets the email.
+     *
+     * @return the email.
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets the email.
+     *
+     * @param email the email.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets the first name.
+     *
+     * @return the first name.
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets the first name.
+     *
+     * @param firstName the first name.
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets the last name.
+     *
+     * @return the last name.
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets the last name.
+     *
+     * @param lastName the last name.
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets the address.
+     *
+     * @return the address.
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * Sets the address.
+     *
+     * @param address the address.
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
+    /**
+     * Gets the cell phone number.
+     *
+     * @return the cell phone number.
+     */
     public String getCellphoneNumber() {
         return cellphoneNumber;
     }
 
+    /**
+     * Sets the cell phone number.
+     *
+     * @param cellphoneNumber the cell phone number.
+     */
     public void setCellphoneNumber(String cellphoneNumber) {
         this.cellphoneNumber = cellphoneNumber;
     }
 
+    /**
+     * Gets the city.
+     *
+     * @return the city.
+     */
     public String getCity() {
         return city;
     }
 
+    /**
+     * Sets the city.
+     *
+     * @param city the city.
+     */
     public void setCity(String city) {
         this.city = city;
     }
 
+    /**
+     * Gets the state.
+     *
+     * @return the state.
+     */
     public String getState() {
         return state;
     }
 
+    /**
+     * Sets the state.
+     *
+     * @param state the state.
+     */
     public void setState(String state) {
         this.state = state;
     }
 
+    /**
+     * Gets the country.
+     *
+     * @return the country.
+     */
     public String getCountry() {
         return country;
     }
 
+    /**
+     * Sets the country.
+     *
+     * @param country the country.
+     */
     public void setCountry(String country) {
         this.country = country;
     }

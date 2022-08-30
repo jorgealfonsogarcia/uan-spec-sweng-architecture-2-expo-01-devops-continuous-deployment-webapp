@@ -26,17 +26,36 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Business service for RandomUsers.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Service
 @Slf4j
-@SuppressWarnings("ClassCanBeRecord")
 class RandomUsersService {
 
     private final RandomUsersRestClient randomUsersRestClient;
 
+    /**
+     * Constructor.
+     *
+     * @param randomUsersRestClient the REST API client for RandomUsers.
+     */
     RandomUsersService(@Autowired RandomUsersRestClient randomUsersRestClient) {
         this.randomUsersRestClient = randomUsersRestClient;
     }
 
+    /**
+     * Gets a set of random users.
+     *
+     * @param results     the number of the requested results.
+     * @param nationality the nationality of the users.
+     * @return a result containing the requested random users.
+     */
     @SneakyThrows
     RandomUser getUsers(final Integer results, final Nationality nationality) {
         return randomUsersRestClient.getUsers(results, nationality.name()).execute().body();

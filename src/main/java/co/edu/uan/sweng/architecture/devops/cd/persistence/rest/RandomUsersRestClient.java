@@ -23,12 +23,35 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+/**
+ * REST API client for RandomUsers.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 public interface RandomUsersRestClient {
 
+    /**
+     * Gets the requested RandomUsers.
+     *
+     * @param results        the number of results.
+     * @param nationality    the nationality of the users.
+     * @param includedFields the list of the included fields for each user.
+     * @return the call response for the RandomUsers result.
+     */
     @GET("api")
     Call<RandomUser> getUsers(@Query("results") Integer results, @Query("nat") String nationality,
                               @Query(value = "inc") String includedFields);
 
+    /**
+     * Gets the requested RandomUsers, with the fields: name,location,email,cell.
+     *
+     * @param results     the number of results.
+     * @param nationality the nationality of the users.
+     * @return the call response for the RandomUsers result.
+     */
     default Call<RandomUser> getUsers(final Integer results, final String nationality) {
         return getUsers(results, nationality, "name,location,email,cell");
     }

@@ -23,6 +23,14 @@ import lombok.Data;
 
 import javax.annotation.Generated;
 
+/**
+ * RandomUsers' picture.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Data
 @Generated("jsonschema2pojo")
 public class Picture {

@@ -25,15 +25,33 @@ import org.springframework.context.annotation.Configuration;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Configuration for Retrofit clients.
+ *
+ * @author Jorge Garcia.
+ * @author Diego Poveda.
+ * @version 1.0.0
+ * @since 17
+ */
 @Configuration
 public class RetrofitConfiguration {
 
     private final String randomusersRestServiceUrl;
 
+    /**
+     * Constructor.
+     *
+     * @param randomusersRestServiceUrl the URL for RandomUsers REST API.
+     */
     public RetrofitConfiguration(@Value("${randomusers.rest.service.url}") String randomusersRestServiceUrl) {
         this.randomusersRestServiceUrl = randomusersRestServiceUrl;
     }
 
+    /**
+     * Creates the bean for the RandomUsers REST API client.
+     *
+     * @return the bean for the RandomUsers REST API client.
+     */
     @Bean
     public RandomUsersRestClient randomUsersRestClient() {
         return new Retrofit.Builder().baseUrl(randomusersRestServiceUrl)
