@@ -1,0 +1,13 @@
+[
+  {
+    "id": 2,
+    "email": "john.doe@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "1234 Main St",
+    "cellphoneNumber": "(987) 654 3210",
+    "city": "Miami",
+    "state": "Florida",
+    "country": "United States"
+  }
+]

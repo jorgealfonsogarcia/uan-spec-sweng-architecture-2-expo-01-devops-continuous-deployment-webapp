@@ -1,0 +1,91 @@
+{
+  "results": [
+    {
+      "name": {
+        "title": "Mr",
+        "first": "Brayden",
+        "last": "Martin"
+      },
+      "location": {
+        "street": {
+          "number": 621,
+          "name": "Robinson Rd"
+        },
+        "city": "Corpus Christi",
+        "state": "Wisconsin",
+        "country": "United States",
+        "postcode": 71430,
+        "coordinates": {
+          "latitude": "-65.8282",
+          "longitude": "-37.9113"
+        },
+        "timezone": {
+          "offset": "-3:00",
+          "description": "Brazil, Buenos Aires, Georgetown"
+        }
+      },
+      "email": "brayden.martin@example.com",
+      "cell": "(746) 897-6707"
+    },
+    {
+      "name": {
+        "title": "Ms",
+        "first": "Glenda",
+        "last": "Gonzalez"
+      },
+      "location": {
+        "street": {
+          "number": 4852,
+          "name": "Bollinger Rd"
+        },
+        "city": "New Orleans",
+        "state": "Michigan",
+        "country": "United States",
+        "postcode": 29752,
+        "coordinates": {
+          "latitude": "50.8493",
+          "longitude": "-86.5475"
+        },
+        "timezone": {
+          "offset": "-1:00",
+          "description": "Azores, Cape Verde Islands"
+        }
+      },
+      "email": "glenda.gonzalez@example.com",
+      "cell": "(766) 566-3515"
+    },
+    {
+      "name": {
+        "title": "Ms",
+        "first": "Danielle",
+        "last": "Freeman"
+      },
+      "location": {
+        "street": {
+          "number": 3162,
+          "name": "E North St"
+        },
+        "city": "Elk Grove",
+        "state": "Louisiana",
+        "country": "United States",
+        "postcode": 94136,
+        "coordinates": {
+          "latitude": "-66.1635",
+          "longitude": "-94.9146"
+        },
+        "timezone": {
+          "offset": "-10:00",
+          "description": "Hawaii"
+        }
+      },
+      "email": "danielle.freeman@example.com",
+      "cell": "(488) 380-8652"
+    }
+  ],
+  "info": {
+    "seed": "84416a47988a88b0",
+    "results": 3,
+    "page": 1,
+    "version": "1.4"
+  }
+}

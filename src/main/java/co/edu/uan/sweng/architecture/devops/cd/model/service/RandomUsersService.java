@@ -28,6 +28,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
+@SuppressWarnings("ClassCanBeRecord")
 class RandomUsersService {
 
     private final RandomUsersRestClient randomUsersRestClient;

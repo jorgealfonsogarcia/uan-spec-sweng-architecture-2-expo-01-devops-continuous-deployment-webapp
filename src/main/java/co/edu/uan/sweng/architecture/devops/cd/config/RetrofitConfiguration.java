@@ -27,6 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Configuration
 public class RetrofitConfiguration {
+
     private final String randomusersRestServiceUrl;
 
     public RetrofitConfiguration(@Value("${randomusers.rest.service.url}") String randomusersRestServiceUrl) {

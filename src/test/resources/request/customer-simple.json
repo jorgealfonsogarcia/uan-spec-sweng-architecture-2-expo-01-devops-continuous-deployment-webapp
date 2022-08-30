@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "email": "jane.doe@example.com",
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "address": "2345 Park St",
+  "cellphoneNumber": "(345) 678 9012",
+  "city": "Chicago",
+  "state": "Illinois",
+  "country": "United States"
+}

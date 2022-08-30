@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "email": "jane.doe@example.com",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "address": "2345 Park St",
+    "cellphoneNumber": "(345) 678 9012",
+    "city": "Chicago",
+    "state": "Illinois",
+    "country": "United States"
+  },
+  {
+    "id": 2,
+    "email": "john.doe@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "1234 Main St",
+    "cellphoneNumber": "(987) 654 3210",
+    "city": "Miami",
+    "state": "Florida",
+    "country": "United States"
+  }
+]

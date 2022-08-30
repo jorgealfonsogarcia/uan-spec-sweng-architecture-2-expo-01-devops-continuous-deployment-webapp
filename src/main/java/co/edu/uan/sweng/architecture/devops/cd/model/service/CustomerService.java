@@ -32,9 +32,11 @@ import java.util.Optional;
 
 @Service
 @Slf4j
+@SuppressWarnings("ClassCanBeRecord")
 public class CustomerService {
 
     private static final String ADDRESS_FORMAT = "%d %s";
+
     private final CustomerRepository customerRepository;
     private final RandomUsersService randomUsersService;
 

@@ -19,9 +19,13 @@
 package co.edu.uan.sweng.architecture.devops.cd.model.dto;
 
 import co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CustomerRequestDTO {
 
     private Integer numOfCustomers;
