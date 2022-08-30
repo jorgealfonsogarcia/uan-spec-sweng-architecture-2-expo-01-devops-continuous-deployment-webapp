@@ -79,7 +79,7 @@ class IndexControllerTest {
     @Test
     @SneakyThrows
     void processForm() {
-        when(customerService.generateAndSave(eq(INTEGER_ONE), eq(US)))
+        when(customerService.generateAndSave(INTEGER_ONE, US))
                 .thenReturn(new ArrayList<>(Arrays.stream(read("response/customer-new.json", Customer[].class))
                         .toList()));
         when(customerService.findAll())
@@ -91,7 +91,7 @@ class IndexControllerTest {
 
         assertEquals("index", indexController.processForm(new CustomerRequestDTO(INTEGER_ONE, US), model));
 
-        verify(customerService).generateAndSave(eq(INTEGER_ONE), eq(US));
+        verify(customerService).generateAndSave(INTEGER_ONE, US);
         verify(customerService).findAll();
 
         verify(model).addAttribute(eq("newCustomers"), anyList());

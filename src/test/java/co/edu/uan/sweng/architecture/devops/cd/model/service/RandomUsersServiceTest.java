@@ -32,8 +32,8 @@ import static co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality.US
 import static co.edu.uan.sweng.architecture.devops.cd.test.util.JsonResourcesReader.read;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Unit test for {@link RandomUsersService}.
@@ -71,7 +71,7 @@ class RandomUsersServiceTest {
 
         when(randomUserResponse.body()).thenReturn(randomUser);
         when(randomUserCall.execute()).thenReturn(randomUserResponse);
-        when(randomUsersRestClient.getUsers(eq(results), eq(nationality.name()))).thenReturn(randomUserCall);
+        when(randomUsersRestClient.getUsers(results, nationality.name())).thenReturn(randomUserCall);
 
         final var result = randomUsersService.getUsers(results, nationality);
 
@@ -80,6 +80,6 @@ class RandomUsersServiceTest {
 
         verify(randomUserResponse).body();
         verify(randomUserCall).execute();
-        verify(randomUsersRestClient).getUsers(eq(results), eq(nationality.name()));
+        verify(randomUsersRestClient).getUsers(results, nationality.name());
     }
 }

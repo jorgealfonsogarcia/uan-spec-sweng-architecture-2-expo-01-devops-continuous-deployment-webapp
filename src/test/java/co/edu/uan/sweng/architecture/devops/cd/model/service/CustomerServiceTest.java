@@ -35,7 +35,8 @@ import static co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality.US
 import static co.edu.uan.sweng.architecture.devops.cd.test.util.JsonResourcesReader.read;
 import static org.apache.commons.lang3.math.NumberUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
 
 /**
@@ -122,7 +123,7 @@ class CustomerServiceTest {
         final var numOfCustomers = 3;
         final var randomUser = read("response/randomusers-all.json", RandomUser.class);
 
-        when(randomUsersService.getUsers(eq(numOfCustomers), eq(US))).thenReturn(randomUser);
+        when(randomUsersService.getUsers(numOfCustomers, US)).thenReturn(randomUser);
         when(customerRepository.saveAndFlush(any(Customer.class)))
                 .thenAnswer(invocationOnMock -> invocationOnMock.getArguments()[INTEGER_ZERO]);
 
@@ -136,7 +137,7 @@ class CustomerServiceTest {
             return name.getFirst().equals(customer.getFirstName()) && name.getLast().equals(customer.getLastName());
         })).forEach(Assertions::assertTrue);
 
-        verify(randomUsersService).getUsers(eq(numOfCustomers), eq(US));
+        verify(randomUsersService).getUsers(numOfCustomers, US);
         verify(customerRepository, times(numOfCustomers)).saveAndFlush(any(Customer.class));
     }
 }
