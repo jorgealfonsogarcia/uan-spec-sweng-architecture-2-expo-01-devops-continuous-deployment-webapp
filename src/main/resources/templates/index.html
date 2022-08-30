@@ -47,7 +47,7 @@
                             <select id="nationality" name="nationality" class="form-select"
                                     aria-label="Default select example">
                                 <option th:each="nationality : ${nationalities}" th:value="${nationality.name()}"
-                                        th:text="${nationality.name()}"></option>
+                                        th:text="${nationality.country}"></option>
                             </select>
                         </div>
                     </div>

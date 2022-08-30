@@ -31,85 +31,105 @@ public enum Nationality {
     /**
      * Australia.
      */
-    AU,
+    AU("Australia"),
     /**
      * Brazil.
      */
-    BR,
+    BR("Brazil"),
     /**
      * Canada.
      */
-    CA,
+    CA("Canada"),
     /**
      * Switzerland.
      */
-    CH,
+    CH("Switzerland"),
     /**
      * Germany.
      */
-    DE,
+    DE("Germany"),
     /**
      * Denmark.
      */
-    DK,
+    DK("Denmark"),
     /**
      * Spain.
      */
-    ES,
+    ES("Spain"),
     /**
      * Finland.
      */
-    FI,
+    FI("Finland"),
     /**
      * France.
      */
-    FR,
+    FR("France"),
     /**
      * United Kingdom.
      */
-    GB,
+    GB("United Kingdom"),
     /**
      * Ireland.
      */
-    IE,
+    IE("Ireland"),
     /**
      * India.
      */
-    IN,
+    IN("India"),
     /**
      * Iran.
      */
-    IR,
+    IR("Iran"),
     /**
      * Mexico.
      */
-    MX,
+    MX("Mexico"),
     /**
      * Netherlands.
      */
-    NL,
+    NL("Netherlands"),
     /**
      * Norway.
      */
-    NO,
+    NO("Norway"),
     /**
      * New Zealand.
      */
-    NZ,
+    NZ("New Zealand"),
     /**
      * Serbia.
      */
-    RS,
+    RS("Serbia"),
     /**
      * Turkey.
      */
-    TR,
+    TR("Turkey"),
     /**
      * Ukraine.
      */
-    UA,
+    UA("Ukraine"),
     /**
      * United States.
      */
-    US
+    US("United States");
+
+    private final String country;
+
+    /**
+     * Constructor.
+     *
+     * @param country the country's name.
+     */
+    Nationality(String country) {
+        this.country = country;
+    }
+
+    /**
+     * Gets the country's name.
+     *
+     * @return the country's name.
+     */
+    public String getCountry() {
+        return country;
+    }
 }

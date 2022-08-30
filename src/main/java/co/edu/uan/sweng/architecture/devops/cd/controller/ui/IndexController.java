@@ -99,6 +99,7 @@ public class IndexController {
     }
 
     private void fillDefault(final Model model) {
-        model.addAttribute("nationalities", Arrays.stream(Nationality.values()).sorted().toList());
+        model.addAttribute("nationalities", Arrays.stream(Nationality.values())
+                .sorted(comparing(Nationality::getCountry)).toList());
     }
 }
