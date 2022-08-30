@@ -43,7 +43,7 @@ public class CustomerBuilder {
      * @param email the email.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setEmail(String email) {
+    public CustomerBuilder email(String email) {
         this.email = email;
         return this;
     }
@@ -54,7 +54,7 @@ public class CustomerBuilder {
      * @param firstName the first name.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setFirstName(String firstName) {
+    public CustomerBuilder firstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
@@ -65,7 +65,7 @@ public class CustomerBuilder {
      * @param lastName the last name.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setLastName(String lastName) {
+    public CustomerBuilder lastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -76,7 +76,7 @@ public class CustomerBuilder {
      * @param address the address.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setAddress(String address) {
+    public CustomerBuilder address(String address) {
         this.address = address;
         return this;
     }
@@ -87,7 +87,7 @@ public class CustomerBuilder {
      * @param cellphoneNumber the cell phone number.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setCellphoneNumber(String cellphoneNumber) {
+    public CustomerBuilder cellphoneNumber(String cellphoneNumber) {
         this.cellphoneNumber = cellphoneNumber;
         return this;
     }
@@ -98,7 +98,7 @@ public class CustomerBuilder {
      * @param city the city.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setCity(String city) {
+    public CustomerBuilder city(String city) {
         this.city = city;
         return this;
     }
@@ -109,7 +109,7 @@ public class CustomerBuilder {
      * @param state the state.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setState(String state) {
+    public CustomerBuilder state(String state) {
         this.state = state;
         return this;
     }
@@ -120,7 +120,7 @@ public class CustomerBuilder {
      * @param country the country.
      * @return the instance of the builder.
      */
-    public CustomerBuilder setCountry(String country) {
+    public CustomerBuilder country(String country) {
         this.country = country;
         return this;
     }
@@ -130,7 +130,7 @@ public class CustomerBuilder {
      *
      * @return the new {@link Customer} instance.
      */
-    public Customer createCustomer() {
+    public Customer build() {
         final var customer = new Customer();
         customer.setEmail(email);
         customer.setFirstName(firstName);

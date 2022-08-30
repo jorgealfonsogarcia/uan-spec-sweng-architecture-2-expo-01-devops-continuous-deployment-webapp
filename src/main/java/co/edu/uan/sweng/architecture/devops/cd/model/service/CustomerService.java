@@ -115,13 +115,14 @@ public class CustomerService {
         final var name = result.getName();
 
         return new CustomerBuilder()
-                .setEmail(result.getEmail())
-                .setFirstName(name.getFirst())
-                .setLastName(name.getLast())
-                .setAddress(ADDRESS_FORMAT.formatted(street.getNumber(), street.getName()))
-                .setCity(location.getCity())
-                .setState(location.getState())
-                .setCountry(location.getCountry())
-                .createCustomer();
+                .email(result.getEmail())
+                .firstName(name.getFirst())
+                .lastName(name.getLast())
+                .address(ADDRESS_FORMAT.formatted(street.getNumber(), street.getName()))
+                .cellphoneNumber(result.getCell())
+                .city(location.getCity())
+                .state(location.getState())
+                .country(location.getCountry())
+                .build();
     }
 }
