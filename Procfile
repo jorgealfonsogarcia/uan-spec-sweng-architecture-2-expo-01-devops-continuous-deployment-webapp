@@ -1,0 +1,1 @@
+web: java $JAVA_TOOL_OPTIONS -jar target/uan-spec-sweng-architecture-2-expo-01-devops-continuous-deployment-webapp-1.0.0-SNAPSHOT.jar --spring.profiles.active=heroku
