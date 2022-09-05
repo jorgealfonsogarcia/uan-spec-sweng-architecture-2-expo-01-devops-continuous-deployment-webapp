@@ -36,15 +36,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Configuration
 public class RetrofitConfiguration {
 
-    private final String randomusersRestServiceUrl;
+    private final String randomUsersRestServiceUrl;
 
     /**
      * Constructor.
      *
-     * @param randomusersRestServiceUrl the URL for RandomUsers REST API.
+     * @param randomUsersRestServiceUrl the URL for RandomUsers REST API.
      */
-    public RetrofitConfiguration(@Value("${randomusers.rest.service.url}") String randomusersRestServiceUrl) {
-        this.randomusersRestServiceUrl = randomusersRestServiceUrl;
+    public RetrofitConfiguration(@Value("${randomusers.rest.service.url}") String randomUsersRestServiceUrl) {
+        this.randomUsersRestServiceUrl = randomUsersRestServiceUrl;
     }
 
     /**
@@ -54,7 +54,7 @@ public class RetrofitConfiguration {
      */
     @Bean
     public RandomUsersRestClient randomUsersRestClient() {
-        return new Retrofit.Builder().baseUrl(randomusersRestServiceUrl)
+        return new Retrofit.Builder().baseUrl(randomUsersRestServiceUrl)
                 .addConverterFactory(GsonConverterFactory.create()).build().create(RandomUsersRestClient.class);
     }
 }
