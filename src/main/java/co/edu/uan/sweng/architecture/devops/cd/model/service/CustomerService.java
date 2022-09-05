@@ -122,7 +122,8 @@ public class CustomerService {
                 .cellphoneNumber(result.getCell())
                 .city(location.getCity())
                 .state(location.getState())
-                .country(location.getCountry())
+                .countryName(location.getCountry())
+                .countryAlpha2Code(result.getNat())
                 .build();
     }
 }

@@ -50,6 +50,7 @@ class CustomerBuilderTest {
         final var city = "Frisco";
         final var state = "Ohio";
         final var country = "United States";
+        final var countryAlpha2Code = "US";
 
         final var result = customerBuilder
                 .email(email)
@@ -59,7 +60,8 @@ class CustomerBuilderTest {
                 .cellphoneNumber(cellphoneNumber)
                 .city(city)
                 .state(state)
-                .country(country)
+                .countryName(country)
+                .countryAlpha2Code(countryAlpha2Code)
                 .build();
 
         assertNotNull(result);
@@ -70,6 +72,7 @@ class CustomerBuilderTest {
         assertEquals(cellphoneNumber, result.getCellphoneNumber());
         assertEquals(city, result.getCity());
         assertEquals(state, result.getState());
-        assertEquals(country, result.getCountry());
+        assertEquals(country, result.getCountryName());
+        assertEquals(countryAlpha2Code, result.getCountryAlpha2Code());
     }
 }

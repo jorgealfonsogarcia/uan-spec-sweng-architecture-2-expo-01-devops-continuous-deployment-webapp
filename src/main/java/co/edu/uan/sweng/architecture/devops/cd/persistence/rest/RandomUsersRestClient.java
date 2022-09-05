@@ -46,13 +46,13 @@ public interface RandomUsersRestClient {
                               @Query(value = "inc") String includedFields);
 
     /**
-     * Gets the requested RandomUsers, with the fields: name,location,email,cell.
+     * Gets the requested RandomUsers, with the fields: name,location,email,cell,nat.
      *
      * @param results     the number of results.
      * @param nationality the nationality of the users.
      * @return the call response for the RandomUsers result.
      */
     default Call<RandomUser> getUsers(final Integer results, final String nationality) {
-        return getUsers(results, nationality, "name,location,email,cell");
+        return getUsers(results, nationality, "name,location,email,cell,nat");
     }
 }

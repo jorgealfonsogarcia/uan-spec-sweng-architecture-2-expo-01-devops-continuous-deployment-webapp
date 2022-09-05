@@ -22,6 +22,7 @@ import co.edu.uan.sweng.architecture.devops.cd.model.dto.CustomerRequestDTO;
 import co.edu.uan.sweng.architecture.devops.cd.model.entity.Customer;
 import co.edu.uan.sweng.architecture.devops.cd.model.enums.Nationality;
 import co.edu.uan.sweng.architecture.devops.cd.model.service.CustomerService;
+import co.edu.uan.sweng.architecture.devops.cd.model.service.FlagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,15 +51,18 @@ public class IndexController {
 
     public static final String INDEX_VIEW = "index";
     private final CustomerService customerService;
+    private final FlagService flagService;
 
     /**
      * Constructor.
      *
      * @param customerService the service for {@link Customer}.
+     * @param flagService     the service for flags.
      */
     @Autowired
-    public IndexController(CustomerService customerService) {
+    public IndexController(CustomerService customerService, FlagService flagService) {
         this.customerService = customerService;
+        this.flagService = flagService;
     }
 
     /**
@@ -101,5 +105,6 @@ public class IndexController {
     private void fillDefault(final Model model) {
         model.addAttribute("nationalities", Arrays.stream(Nationality.values())
                 .sorted(comparing(Nationality::getCountry)).toList());
+        model.addAttribute("flagImages", flagService.getFlagImagesPathMap());
     }
 }
