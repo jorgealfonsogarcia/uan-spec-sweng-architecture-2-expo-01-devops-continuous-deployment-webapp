@@ -21,6 +21,7 @@ package co.edu.uan.sweng.architecture.devops.cd.controller.ui;
 import co.edu.uan.sweng.architecture.devops.cd.model.dto.CustomerRequestDTO;
 import co.edu.uan.sweng.architecture.devops.cd.model.entity.Customer;
 import co.edu.uan.sweng.architecture.devops.cd.model.service.CustomerService;
+import co.edu.uan.sweng.architecture.devops.cd.model.service.FlagService;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,13 +56,17 @@ class IndexControllerTest {
     private CustomerService customerService;
 
     @Mock
+    private FlagService flagService;
+
+    @Mock
     private Model model;
 
     private IndexController indexController;
+    ;
 
     @BeforeEach
     void setUp() {
-        indexController = new IndexController(customerService);
+        indexController = new IndexController(customerService, flagService);
 
         when(model.addAttribute(eq("nationalities"), any())).thenReturn(model);
     }

@@ -33,3 +33,7 @@ randomusers:
   rest:
     service:
       url: https://randomuser.me/
+
+flag:
+  images:
+    path: img/ip2location/flags/16

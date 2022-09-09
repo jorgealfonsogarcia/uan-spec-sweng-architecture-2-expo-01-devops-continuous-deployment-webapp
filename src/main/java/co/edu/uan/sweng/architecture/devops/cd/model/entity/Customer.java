@@ -53,7 +53,8 @@ public class Customer implements Serializable {
     private String cellphoneNumber;
     private String city;
     private String state;
-    private String country;
+    private String countryName;
+    private String countryAlpha2Code;
 
     /**
      * Gets the id.
@@ -200,21 +201,39 @@ public class Customer implements Serializable {
     }
 
     /**
-     * Gets the country.
+     * Gets the country's name.
      *
-     * @return the country.
+     * @return the country's name.
      */
-    public String getCountry() {
-        return country;
+    public String getCountryName() {
+        return countryName;
     }
 
     /**
-     * Sets the country.
+     * Sets the country's name.
      *
-     * @param country the country.
+     * @param country the country's name.
      */
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCountryName(String country) {
+        this.countryName = country;
+    }
+
+    /**
+     * Gets the country's alpha 2 code.
+     *
+     * @return the country's alpha 2 code
+     */
+    public String getCountryAlpha2Code() {
+        return countryAlpha2Code;
+    }
+
+    /**
+     * Sets the country's alpha 2 code.
+     *
+     * @param countryAlpha2Code the country's alpha 2 code
+     */
+    public void setCountryAlpha2Code(String countryAlpha2Code) {
+        this.countryAlpha2Code = countryAlpha2Code;
     }
 
     @Override
@@ -231,7 +250,8 @@ public class Customer implements Serializable {
         return new EqualsBuilder().append(id, customer.id).append(email, customer.email)
                 .append(firstName, customer.firstName).append(lastName, customer.lastName)
                 .append(address, customer.address).append(cellphoneNumber, customer.cellphoneNumber)
-                .append(city, customer.city).append(state, customer.state).append(country, customer.country).isEquals();
+                .append(city, customer.city).append(state, customer.state).append(countryName, customer.countryName)
+                .append(countryAlpha2Code, customer.countryAlpha2Code).isEquals();
     }
 
     @Override
@@ -239,7 +259,7 @@ public class Customer implements Serializable {
         final var initialOddNumber = 17;
         final var multiplierOddNumber = 37;
         return new HashCodeBuilder(initialOddNumber, multiplierOddNumber).append(id).append(email).append(firstName)
-                .append(lastName).append(address).append(cellphoneNumber).append(city).append(state).append(country)
-                .toHashCode();
+                .append(lastName).append(address).append(cellphoneNumber).append(city).append(state).append(countryName)
+                .append(countryAlpha2Code).toHashCode();
     }
 }

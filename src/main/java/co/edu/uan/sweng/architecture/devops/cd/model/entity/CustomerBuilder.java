@@ -35,7 +35,8 @@ public class CustomerBuilder {
     private String cellphoneNumber;
     private String city;
     private String state;
-    private String country;
+    private String countryName;
+    private String countryAlpha2Code;
 
     /**
      * Sets the email.
@@ -115,13 +116,24 @@ public class CustomerBuilder {
     }
 
     /**
-     * Sets the country.
+     * Sets the country's name.
      *
-     * @param country the country.
+     * @param countryName the country's name.
      * @return the instance of the builder.
      */
-    public CustomerBuilder country(String country) {
-        this.country = country;
+    public CustomerBuilder countryName(String countryName) {
+        this.countryName = countryName;
+        return this;
+    }
+
+    /**
+     * Sets the country's alpha 2 code.
+     *
+     * @param countryAlpha2Code the country's alpha 2 code.
+     * @return the instance of the builder.
+     */
+    public CustomerBuilder countryAlpha2Code(String countryAlpha2Code) {
+        this.countryAlpha2Code = countryAlpha2Code;
         return this;
     }
 
@@ -139,7 +151,8 @@ public class CustomerBuilder {
         customer.setCellphoneNumber(cellphoneNumber);
         customer.setCity(city);
         customer.setState(state);
-        customer.setCountry(country);
+        customer.setCountryName(countryName);
+        customer.setCountryAlpha2Code(countryAlpha2Code);
         return customer;
     }
 }
